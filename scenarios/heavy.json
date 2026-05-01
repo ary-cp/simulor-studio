@@ -1,0 +1,18 @@
+{
+  "name": "heavy",
+  "baseUrl": "http://localhost:3000",
+  "users": 50,
+  "duration": 300,
+  "actions": ["login", "post", "feed"],
+  "weights": [1, 4, 8],
+  "delayRange": [500, 3000],
+  "credentials": {
+    "usernamePrefix": "testuser",
+    "password": "password123"
+  },
+  "endpoints": {
+    "login": "/api/auth/login",
+    "post":  "/api/posts",
+    "feed":  "/api/feed"
+  }
+}

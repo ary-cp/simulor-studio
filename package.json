@@ -1,0 +1,30 @@
+{
+  "name": "simulor-reliability-studio",
+  "version": "1.0.0",
+  "description": "Local-first web and API reliability dashboard for smoke tests, load checks, reports, and demo targets",
+  "main": "index.js",
+  "scripts": {
+    "light": "node index.js --scenario light",
+    "medium": "node index.js --scenario medium",
+    "heavy": "node index.js --scenario heavy",
+    "custom": "node index.js --scenario",
+    "dashboard": "node src/dashboard/server.js",
+    "dashboard:open": "set OPEN=1&& node src/dashboard/server.js",
+    "demo-api": "node src/demo/api-server.js",
+    "dev": "node src/dev/launch.js",
+    "demo-test": "node src/demo/run-demo-test.js",
+    "check": "node --check src/dashboard/server.js && node --check public/app.js && node --check src/demo/api-server.js && node --check src/demo/run-demo-test.js && node --check src/dev/launch.js && node --check src/api/client.js && node --check src/engine/simulator.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "load-testing",
+    "api-testing",
+    "performance",
+    "dashboard",
+    "reliability",
+    "smoke-testing"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Simulor is a high-fidelity reliability studio for automated functional testing. Test APIs, websites, and local environments with AI-grade precision.">
+    <meta property="og:title" content="Simulor — The Open Source Reliability Studio">
+    <meta property="og:description" content="Cinematic testing for modern engineering teams. Transparent, community-driven, and free forever.">
+    <meta name="theme-color" content="#0b110e">
+    <title>Simulor — High-Fidelity Open Source Testing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="custom-cursor"></div>
+  <header class="topbar">
+    <a href="/index.html" class="brand">
+      <div class="brand-mark">S</div>
+      <div class="brand-text">
+        <h1>Simulor</h1>
+        <p>Reliability Studio</p>
+      </div>
+    </a>
+    <nav>
+      <div class="palette-hint-header">Press ⌘K to search</div>
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/docs.html">Docs</a>
+      <a href="/dashboard.html">Dashboard</a>
+      <div id="user-button"></div>
+      <button class="nav-cta" id="loginBtn" onclick="triggerLogin()">Sign In</button>
+      <button class="nav-cta" onclick="triggerLogin()">Start Testing</button>
+    </nav>
+  </header>
+  
+  <a href="https://github.com/simulor/simulor" target="_blank" class="github-float">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+    Star on GitHub
+  </a>
+
+  <div class="magic-spotlight"></div>
+  
+  <!-- Command Palette -->
+  <div id="commandPalette" class="command-palette">
+    <div class="palette-overlay"></div>
+    <div class="palette-content">
+      <div class="palette-header">
+        <input type="text" id="paletteSearch" placeholder="Type a command or search..." autofocus>
+        <span class="palette-hint">ESC to close</span>
+      </div>
+        <div class="palette-results" id="paletteResults">
+          <div class="palette-item" data-action="go-home">
+            <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+            <span class="palette-label">Back to Home</span>
+            <span class="palette-shortcut">⌘H</span>
+          </div>
+          <div class="palette-item" data-action="go-dashboard">
+            <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></span>
+            <span class="palette-label">Go to Dashboard</span>
+            <span class="palette-shortcut">⌘D</span>
+          </div>
+          <div class="palette-item" data-action="go-pricing">
+            <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+            <span class="palette-label">View Pricing</span>
+            <span class="palette-shortcut">⌘P</span>
+          </div>
+          <div class="palette-item" data-action="go-docs">
+            <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+            <span class="palette-label">Read Documentation</span>
+            <span class="palette-shortcut">⌘?</span>
+          </div>
+          <div class="palette-item" data-action="toggle-theme">
+            <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 3v18"/></svg></span>
+            <span class="palette-label">Toggle Dark/Light Mode</span>
+            <span class="palette-shortcut">⌘L</span>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <main>
+<div id="view-home" class="view-section active">
+      <section class="landing-hero reveal" id="home">
+        <div class="hero-copy-block float-ui">
+          <p class="eyebrow stagger-item">The Open Source Testing Platform</p>
+          <h1 class="stagger-item">Automate your functional tests with community-driven precision.</h1>
+          <p class="hero-copy stagger-item">Simulor is the ultimate open-source platform for testing websites, APIs, localhost apps, and local HTML files. Completely transparent, free forever, and built for local-first efficiency.</p>
+          <div class="hero-actions stagger-item">
+            <div class="hero-sandbox">
+              <input type="text" id="heroProbeInput" placeholder="Enter URL (e.g. google.com)">
+              <button id="heroProbeBtn">Quick Probe</button>
+            </div>
+            <div id="heroProbeResult" class="hero-probe-result"></div>
+          </div>
+          <div class="hero-actions stagger-item" style="margin-top: 12px;">
+            <button class="price-btn featured" onclick="triggerLogin()">Unlock Pro for Free</button>
+            <a class="secondary-link" href="/dashboard.html">Try Sandbox (No Login)</a>
+          </div>
+          <div class="trust-row stagger-item">
+            <span>Public URLs</span>
+            <span>Localhost apps</span>
+            <span>Local files</span>
+            <span>API scenarios</span>
+          </div>
+        </div>
+
+        <aside class="hero-console" aria-label="Run status preview">
+          <div class="console-top">
+            <span class="window-dot"></span>
+            <span class="window-dot amber-dot"></span>
+            <span class="window-dot green-dot"></span>
+          </div>
+          <div class="console-grid">
+            <span>Status</span>
+            <strong id="runStatus">Ready</strong>
+            <span>Latest</span>
+            <strong id="latestRun">Demo profile loaded</strong>
+            <span>Health</span>
+            <strong id="heroGrade">Calculating</strong>
+          </div>
+          <div class="console-proof">
+            <span>Quick run</span>
+            <strong>URL -> Probe -> Report</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section-block features-overview reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Advanced Testing for Modern Teams</h2>
+        </div>
+        <div class="feature-strip stagger-item">
+          <div class="feature-card">
+            <div class="icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3>AI Session Replay</h3>
+            <p>Watch exactly what your users experienced during a test run. Visual evidence for faster bug resolution.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Visual Regression AI</h3>
+            <p>Automatically detect UI anomalies and pixel-perfect changes across deploys. Our AI flags layout shifts instantly.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Global Edge Nodes</h3>
+            <p>Run tests from 12+ global regions to ensure consistent performance for your international audience.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block trusted-by reveal">
+        <p class="eyebrow text-center stagger-item">Powering high-reliability teams</p>
+        <div class="logo-grid stagger-item">
+          <div class="logo-mark">AETHER</div>
+          <div class="logo-mark">VELOCITY</div>
+          <div class="logo-mark">NEON</div>
+          <div class="logo-mark">STRATA</div>
+          <div class="logo-mark">FLUX</div>
+        </div>
+      </section>
+
+      <section class="engine-section" id="how-it-works">
+        <div class="engine-container">
+          <div class="engine-visual">
+            <div class="engine-track">
+              <div class="engine-progress" id="engineProgress"></div>
+            </div>
+          </div>
+          <div class="engine-content">
+            <article class="engine-step" data-step="1">
+              <span class="step-meta">Phase 01 — Initialization</span>
+              <h2>Ingesting the target.</h2>
+              <p>Point Simulor at any URL, localhost port, or local file. Our agent instantly analyzes the environment and prepares the probe sequence.</p>
+              <div class="engine-feature-reveal">
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </span>
+                  <h4>Target Probes</h4>
+                  <p>Real-time reachability, asset counting, and metadata extraction.</p>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  </span>
+                  <h4>SSL/CORS Audit</h4>
+                  <p>Automatic verification of security headers and certificate health.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="engine-step" data-step="2">
+              <span class="step-meta">Phase 02 — Simulation</span>
+              <h2>Running AI Scenarios.</h2>
+              <p>Simulate thousands of concurrent users with complex interaction patterns. From simple smoke tests to weighted load simulations.</p>
+              <div class="engine-feature-reveal">
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                  </span>
+                  <h4>AI Interaction</h4>
+                  <p>Weighted user paths that mimic real human behavior and sessions.</p>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </span>
+                  <h4>Elastic Load</h4>
+                  <p>Ramp up from 1 to 10k users in seconds without infrastructure lag.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="engine-step" data-step="3">
+              <span class="step-meta">Phase 03 — Analysis</span>
+              <h2>Diagnostic Synthesis.</h2>
+              <p>As the test runs, Simulor synthesizes billions of data points into actionable reliability insights and pixel-perfect visual diffs.</p>
+              <div class="engine-feature-reveal">
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  </span>
+                  <h4>Action Health</h4>
+                  <p>Drill down into exactly which button or API call is failing and why.</p>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  </span>
+                  <h4>Visual QA</h4>
+                  <p>Automatic pixel-match detection for layout shifts and UI bugs.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="engine-step" data-step="4">
+              <span class="step-meta">Phase 04 — Certification</span>
+              <h2>Reliability Scoring.</h2>
+              <p>Get a definitive grade for your deploy. Share high-fidelity reports, raw JSON logs, or CSV exports with your team.</p>
+              <div class="engine-feature-reveal">
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                  </span>
+                  <h4>Grade Scoring</h4>
+                  <p>Proprietary reliability index based on latency, uptime, and UX health.</p>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                  </span>
+                  <h4>Live Replays</h4>
+                  <p>Visual step-by-step playback of every failed test session.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block testimonials reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Wall of Love</p>
+          <h2>Loved by reliability engineers</h2>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card stagger-item">
+            <p>"Simulor has completely transformed how we handle our staging smoke tests. It's fast, local-first, and the reports are beautiful."</p>
+            <div class="user">
+              <strong>Aryan Sharma</strong>
+              <span>Lead QA @ TechFlow</span>
+            </div>
+          </article>
+          <article class="testimonial-card stagger-item">
+            <p>"The ability to test local files and localhost apps without any complex setup is a game changer for our frontend team."</p>
+            <div class="user">
+              <strong>Sarah Chen</strong>
+              <span>Engineering Manager @ Strata</span>
+            </div>
+          </article>
+          <article class="testimonial-card stagger-item">
+            <p>"Finally, a testing tool that doesn't feel like it was built in 2005. The UX is top-notch and the AI probes are incredibly accurate."</p>
+            <div class="user">
+              <strong>Marcus Thorne</strong>
+              <span>DevOps Architect</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block newsletter reveal">
+        <div class="newsletter-box float-ui">
+          <div class="newsletter-content">
+            <h2>Stay ahead of the curve</h2>
+            <p>Join 2,000+ engineers receiving our weekly deep dives into reliability engineering and local-first testing.</p>
+          </div>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="primary-link">Subscribe</button>
+          </form>
+        </div>
+      </section>
+      </div> <!-- /view-home -->
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand-side">
+          <a class="brand" href="/index.html">
+            <span class="brand-mark">S</span>
+            <span>
+              <strong>Simulor</strong>
+              <small>Reliability Studio</small>
+            </span>
+          </a>
+          <p style="margin-top: 16px; max-width: 240px;">The complete reliability platform for modern engineering teams. Local-first, AI-grade, and blisteringly fast.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="/features.html">Features</a>
+            <a href="/features.html#workflow">How it works</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/dashboard.html">Dashboard</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="/docs.html">Documentation</a>
+            <a href="/docs.html#support">Contact Support</a>
+            <a href="#">System Status</a>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Simulor Labs. Built with precision for the edge.</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+
+      // Setup Clerk
+      const clerkPubKey = 'pk_test_c3VwZXItYW50ZWxvcGUtNzMuY2xlcmsuYWNjb3VudHMuZGV2JA';
+      const script = document.createElement('script');
+      script.setAttribute('data-clerk-publishable-key', clerkPubKey);
+      script.async = true;
+      script.src = 'https://super-antelope-73.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js';
+      script.crossOrigin = 'anonymous';
+      document.head.appendChild(script);
+
+      script.addEventListener('load', async function () {
+        await window.Clerk.load();
+        window.ClerkIsReady = true;
+        
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+          loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.Clerk.openSignIn();
+          });
+        }
+        
+        if (window.Clerk.user) {
+          if (loginBtn) loginBtn.style.display = 'none';
+          document.getElementById('user-button').innerHTML = '';
+          window.Clerk.mountUserButton(document.getElementById('user-button'));
+          document.getElementById('startTestingBtn').textContent = 'Open Dashboard';
+        }
+      });
+
+    </script>
+  </body>
+</html>

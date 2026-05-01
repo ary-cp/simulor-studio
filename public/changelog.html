@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Changelog - Simulor Test Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .changelog-container {
+        max-width: 700px;
+        margin: 140px auto 100px;
+        padding: 0 20px;
+      }
+      .changelog-entry {
+        position: relative;
+        padding-left: 40px;
+        border-left: 1px solid var(--line);
+        margin-bottom: 60px;
+      }
+      .changelog-entry::before {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 0;
+        width: 9px;
+        height: 9px;
+        background: var(--mint);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--mint);
+      }
+      .changelog-date {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.9rem;
+        color: var(--mint);
+        margin-bottom: 8px;
+        display: block;
+      }
+      .changelog-entry h2 { margin-bottom: 16px; font-size: 1.8rem; }
+      .changelog-entry ul { list-style: none; color: var(--mute); line-height: 1.7; }
+      .changelog-entry li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 12px; }
+      .changelog-entry li::before { content: '→'; color: var(--mint); }
+      .tag {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-right: 8px;
+      }
+      .tag.new { background: rgba(45, 212, 191, 0.2); color: var(--mint); }
+      .tag.fix { background: rgba(245, 158, 11, 0.2); color: #f59e0b; }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/index.html" class="brand">
+        <div class="brand-mark">S</div>
+        <div class="brand-text"><h1>Simulor</h1></div>
+      </a>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/changelog.html" class="active">Changelog</a>
+      </nav>
+    </header>
+
+    <main class="changelog-container reveal">
+      <p class="eyebrow">Product Updates</p>
+      <h1 style="font-size: 3.5rem; margin-bottom: 60px;">What's New</h1>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">April 30, 2024</span>
+        <h2><span class="tag new">New</span> The "Everything" Update</h2>
+        <ul>
+          <li>Launched the new Simulor Docs system with multi-section navigation.</li>
+          <li>Integrated Command Palette (CMD+K) for lightning-fast workflow.</li>
+          <li>Added real-time system status indicators across the platform.</li>
+          <li>Improved Hero Sandbox for instant URL probing on landing page.</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">April 28, 2024</span>
+        <h2><span class="tag new">New</span> Dashboard Overhaul</h2>
+        <ul>
+          <li>Re-engineered the dashboard shell for a single-page experience.</li>
+          <li>Added new Scenario Builder with drag-and-drop actions.</li>
+          <li>Implemented high-fidelity Action Health charts.</li>
+        </ul>
+      </div>
+
+      <div class="changelog-entry">
+        <span class="changelog-date">April 25, 2024</span>
+        <h2><span class="tag fix">Fix</span> Auth & Stability</h2>
+        <ul>
+          <li>Fixed Clerk redirection loop for unauthenticated users.</li>
+          <li>Optimized asset loading for 40% faster first meaningful paint.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2024 Simulor Labs. Always evolving.</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

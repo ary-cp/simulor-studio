@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 - Target Not Found | Simulor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .error-page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px;
+      }
+      .error-code {
+        font-size: clamp(8rem, 20vw, 12rem);
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        line-height: 1;
+        background: linear-gradient(180deg, var(--text) 0%, rgba(255,255,255,0.05) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: -20px;
+      }
+      .error-page h2 { font-size: 2rem; margin-bottom: 16px; }
+      .error-page p { color: var(--mute); max-width: 400px; margin-bottom: 32px; }
+    </style>
+  </head>
+  <body>
+    <div class="magic-spotlight"></div>
+    <header class="topbar">
+      <a href="/index.html" class="brand">
+        <div class="brand-mark">S</div>
+        <div class="brand-text">
+          <h1>Simulor</h1>
+        </div>
+      </a>
+    </header>
+
+    <main class="error-page reveal">
+      <div class="error-code">404</div>
+      <h2>Target Lost in Space</h2>
+      <p>The page you are looking for has been decommissioned or moved to a different node in our global network.</p>
+      <div class="hero-actions">
+        <a class="primary-link shimmer-btn" href="/index.html">Back to Home</a>
+        <a class="secondary-link" href="/dashboard.html">Check Dashboard</a>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

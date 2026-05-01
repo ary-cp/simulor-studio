@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy - Simulor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .legal-container {
+        max-width: 800px;
+        margin: 140px auto 100px;
+        padding: 0 20px;
+      }
+      .legal-container h1 { font-size: 3rem; margin-bottom: 40px; }
+      .legal-container h2 { font-size: 1.5rem; margin: 32px 0 16px; color: var(--mint); }
+      .legal-container p { color: var(--mute); line-height: 1.8; margin-bottom: 20px; }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/index.html" class="brand">
+        <div class="brand-mark">S</div>
+        <div class="brand-text"><h1>Simulor</h1></div>
+      </a>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main class="legal-container reveal">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: April 30, 2024</p>
+      
+      <h2>1. Information We Collect</h2>
+      <p>Simulor is designed with a local-first philosophy. We collect minimal personal data required for authentication via Clerk and for improving our testing agent's performance. This includes your email address and basic profile information provided during signup.</p>
+      
+      <h2>2. Data Locality & Security</h2>
+      <p>Your test logs, scenarios, and results are primarily stored on your local machine. We only sync data to our cloud infrastructure when you explicitly enable "Cloud Reports" or "Team Collaboration". All synced data is encrypted in transit and at rest using enterprise-grade protocols.</p>
+      
+      <h2>3. Third-party Services</h2>
+      <p>We use Clerk for authentication and Vercel for hosting. These services may collect information in accordance with their own privacy policies. We do not sell your data to third parties.</p>
+      
+      <h2>4. Your Rights</h2>
+      <p>You have the right to access, export, or delete your data at any time through the Simulor dashboard settings.</p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand-side">
+          <a class="brand" href="/index.html">
+            <span class="brand-mark">S</span>
+            <span>
+              <strong>Simulor</strong>
+              <small>Reliability Studio</small>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Simulor Labs. Security and Privacy are built-in.</p>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

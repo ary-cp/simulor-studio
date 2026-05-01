@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the deep diagnostic capabilities of Simulor. From AI session replays to global edge nodes, automate your functional testing with precision.">
+    <meta property="og:title" content="Simulor Features — Advanced Testing Capabilities">
+    <meta property="og:description" content="Discover how Simulor handles websites, APIs, and local files with cinematic precision.">
+    <meta name="theme-color" content="#0b110e">
+    <title>Simulor Features — Advanced Reliability Capabilities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="custom-cursor"></div>
+    <div class="magic-spotlight"></div>
+    <div id="commandPalette" class="command-palette">
+      <div class="palette-content">
+        <div class="palette-header">
+          <input type="text" id="paletteSearch" placeholder="Type a command or search..." autofocus>
+          <span class="palette-hint">ESC to close</span>
+        </div>
+          <div class="palette-results" id="paletteResults">
+            <div class="palette-item" data-action="go-home">
+              <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+              <span class="palette-label">Back to Home</span>
+              <span class="palette-shortcut">⌘H</span>
+            </div>
+            <div class="palette-item" data-action="go-dashboard">
+              <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></span>
+              <span class="palette-label">Go to Dashboard</span>
+              <span class="palette-shortcut">⌘D</span>
+            </div>
+            <div class="palette-item" data-action="go-pricing">
+              <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+              <span class="palette-label">View Pricing</span>
+              <span class="palette-shortcut">⌘P</span>
+            </div>
+            <div class="palette-item" data-action="go-docs">
+              <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+              <span class="palette-label">Read Documentation</span>
+              <span class="palette-shortcut">⌘?</span>
+            </div>
+            <div class="palette-item" data-action="toggle-theme">
+              <span class="palette-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 3v18"/></svg></span>
+              <span class="palette-label">Toggle Dark/Light Mode</span>
+              <span class="palette-shortcut">⌘L</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  <header class="topbar">
+    <a href="/index.html" class="brand">
+      <div class="brand-mark">S</div>
+      <div class="brand-text">
+        <h1>Simulor</h1>
+        <p>Reliability Studio</p>
+      </div>
+    </a>
+    <nav>
+      <a href="/features.html">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/docs.html">Docs</a>
+      <a href="/dashboard.html">Dashboard</a>
+      <div id="user-button"></div>
+      <button class="nav-cta" id="loginBtn">Sign In</button>
+      <a href="/dashboard.html" class="nav-cta">Start Testing</a>
+    </nav>
+  </header>
+
+    <main>
+<div id="view-features" class="view-section active" >
+      <section class="feature-strip" id="features" aria-label="Product features">
+        <article>
+          <span>01</span>
+          <h2>Launch scenarios</h2>
+          <p>Run light, medium, or heavy profiles from the browser with URL, user, and duration overrides.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Read the signal</h2>
+          <p>Track latency, success rate, RPS, failures, and action-level health in one focused workspace.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Scenario Engine</h2>
+          <p>Build custom blueprints that simulate real user behavior—Login, Post, and Feed flows—instead of just hitting a single URL.</p>
+        </article>
+      </section>
+
+      <section class="section-block stack-section" aria-label="Supported testing targets">
+        <div class="section-heading">
+          <p class="eyebrow">Built for every target</p>
+          <h2>One page for websites, APIs, localhost, and local files.</h2>
+          <p>Use it as a portfolio-grade tester, a local QA dashboard, or a lightweight internal reliability tool.</p>
+        </div>
+        <div class="stack-grid">
+          <article>
+            <span>WWW</span>
+            <h3>Public websites</h3>
+            <p>Probe and smoke-test production or staging URLs with latency, status, title, and asset signals.</p>
+          </article>
+          <article>
+            <span>API</span>
+            <h3>Backend flows</h3>
+            <p>Run login, feed, post, and custom endpoint scenarios with weighted user activity.</p>
+          </article>
+          <article>
+            <span>DEV</span>
+            <h3>Localhost apps</h3>
+            <p>Point it at Vite, Next, Express, Flask, Laravel, or anything running locally.</p>
+          </article>
+          <div class="feature-strip stagger-item">
+        <div class="feature-card">
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Visual Regression AI</h3>
+          <p>Automatically detect UI anomalies and pixel-perfect changes across deploys. Our AI flags layout shifts before your users do.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Global Edge Nodes</h3>
+          <p>Run tests from 12+ global regions to ensure consistent performance for your international audience.</p>
+        </div>
+      </div>
+    </section>
+
+      <section class="section-block workflow-section" id="workflow">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>From target to report in four calm steps.</h2>
+        </div>
+        <div class="timeline-wrapper">
+          <div class="timeline-line-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-dot" id="timelineDot"></div>
+          </div>
+          <div class="workflow-timeline">
+            <article class="timeline-step" data-step="1">
+              <div class="step-marker">01</div>
+              <h3>Add a target</h3>
+              <p>Paste a public URL, localhost URL, API base URL, or local file path.</p>
+            </article>
+            <article class="timeline-step" data-step="2">
+              <div class="step-marker">02</div>
+              <h3>Probe first</h3>
+              <p>Check reachability, status, latency, page title, links, scripts, and stylesheet count.</p>
+            </article>
+            <article class="timeline-step" data-step="3">
+              <div class="step-marker">03</div>
+              <h3>Run scenarios</h3>
+              <p>Launch quick smoke tests or reusable load scenarios with user and duration controls.</p>
+            </article>
+            <article class="timeline-step" data-step="4">
+              <div class="step-marker">04</div>
+              <h3>Ship the evidence</h3>
+              <p>Review grades, insights, action breakdowns, raw JSON, CSV exports, and run comparisons.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      </div> <!-- /view-features -->
+</main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand-side">
+          <a class="brand" href="/index.html">
+            <span class="brand-mark">S</span>
+            <span>
+              <strong>Simulor</strong>
+              <small>Reliability Studio</small>
+            </span>
+          </a>
+          <p style="margin-top: 16px; max-width: 240px;">Deep diagnostic capabilities for modern engineering teams. Local-first, AI-grade, and blisteringly fast.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Product</h4>
+            <a href="/features.html">Features</a>
+            <a href="/features.html#workflow">How it works</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/dashboard.html">Dashboard</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="/docs.html">Documentation</a>
+            <a href="/docs.html#support">Contact Support</a>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Simulor Labs. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+
+      // Setup Clerk
+      const clerkPubKey = 'pk_test_c3VwZXItYW50ZWxvcGUtNzMuY2xlcmsuYWNjb3VudHMuZGV2JA';
+      const script = document.createElement('script');
+      script.setAttribute('data-clerk-publishable-key', clerkPubKey);
+      script.async = true;
+      script.src = 'https://super-antelope-73.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js';
+      script.crossOrigin = 'anonymous';
+      document.head.appendChild(script);
+
+      script.addEventListener('load', async function () {
+        await window.Clerk.load();
+        window.ClerkIsReady = true;
+        
+        const loginBtn = document.getElementById('loginBtn');
+        if (loginBtn) {
+          loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.Clerk.openSignIn();
+          });
+        }
+        
+        if (window.Clerk.user) {
+          if (loginBtn) loginBtn.style.display = 'none';
+          document.getElementById('user-button').innerHTML = '';
+          window.Clerk.mountUserButton(document.getElementById('user-button'));
+          document.getElementById('startTestingBtn').textContent = 'Open Dashboard';
+        }
+      });
+
+    </script>
+  </body>
+</html>

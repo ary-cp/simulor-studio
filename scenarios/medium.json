@@ -1,0 +1,18 @@
+{
+  "name": "medium",
+  "baseUrl": "http://localhost:3000",
+  "users": 20,
+  "duration": 120,
+  "actions": ["login", "post", "feed", "idle"],
+  "weights": [1, 3, 6, 1],
+  "delayRange": [2000, 6000],
+  "credentials": {
+    "usernamePrefix": "testuser",
+    "password": "password123"
+  },
+  "endpoints": {
+    "login": "/api/auth/login",
+    "post":  "/api/posts",
+    "feed":  "/api/feed"
+  }
+}

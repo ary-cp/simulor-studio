@@ -1,0 +1,30 @@
+{
+  "name": "starter",
+  "baseUrl": "http://localhost:3000",
+  "users": 10,
+  "duration": 60,
+  "actions": [
+    "login",
+    "post",
+    "feed"
+  ],
+  "weights": [
+    1,
+    1,
+    1
+  ],
+  "delayRange": [
+    1000,
+    4000
+  ],
+  "credentials": {
+    "usernamePrefix": "testuser",
+    "password": "password123"
+  },
+  "endpoints": {
+    "login": "/api/auth/login",
+    "post": "/api/posts",
+    "feed": "/api/feed",
+    "page": "/"
+  }
+}
